@@ -37,7 +37,10 @@ function CountRenderer() {
 function EvenCountRenderer() {
   // let isEven = useRecoilValue(evenSelector);
   const count = useRecoilValue(countAtom);
-  const isEven = useMemo(()=>{return (count&1)},[count])
+  const isEven = useMemo(()=>{
+    if(count&1) return false;
+    return true;
+  },[count])
   return <div>
     {isEven ? "It is even" : "it is odd"}
   </div>
