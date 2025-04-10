@@ -34,13 +34,19 @@ function CountRenderer() {
   </div>
 }
 
+// function EvenCountRenderer() {
+//   // let isEven = useRecoilValue(evenSelector);
+//   const count = useRecoilValue(countAtom);
+//   const isEven = useMemo(()=>{
+//     if(count&1) return false;
+//     return true;
+//   },[count])
+//   return <div>
+//     {isEven ? "It is even" : "it is odd"}
+//   </div>
+// }
 function EvenCountRenderer() {
-  // let isEven = useRecoilValue(evenSelector);
-  const count = useRecoilValue(countAtom);
-  const isEven = useMemo(()=>{
-    if(count&1) return false;
-    return true;
-  },[count])
+  const isEven = useRecoilValue(evenSelector);
   return <div>
     {isEven ? "It is even" : "it is odd"}
   </div>
